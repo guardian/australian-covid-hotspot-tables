@@ -19,7 +19,7 @@ fetch(`https://data.nsw.gov.au/data/dataset/0a52e6c1-bc0b-48af-8b45-d791a6d8e289
     			"Suburb" : item.Suburb,
     			"Venue" : item.Venue,
     			"Date and time" : `${item.Time} on ${item.Date}`,
-    			"Health advice" : item.HealthAdviceHTML //.replace(/(<([^>]+)>)/gi, "")
+    			"Health advice" : (item.HealthAdviceHTML!=undefined) ? item.HealthAdviceHTML.replace(/(<([^>]+)>)/gi, "") : item.HealthAdviceHTML 
     		}
     	})
 
