@@ -1,0 +1,15 @@
+{
+	"sheets": {
+		"data": [],
+		"template": [],
+		"options": [{
+			"format": "scrolling",
+			"enableSearch": "TRUE",
+			"enableSort": "TRUE"
+		}],
+		"key": [],
+		"chartId": [{
+			"type": "table"
+		}]
+	}
+}
