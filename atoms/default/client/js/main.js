@@ -38,12 +38,11 @@ function onElementHeightChange(elm, callback) {
 
 if (window.frameElement) {
 
-    // console.log("We are inside an iframe universe.")
-    // document.querySelector(".interactive-wrapper").style.overflow = "hidden";
-    // document.querySelector(".interactive-wrapper").style.borderTop = "solid 1px #dfdfdf";
-    // document.querySelector(".interactive-wrapper").style.borderBottom = "solid 1px #dfdfdf";
-    // document.querySelector(".interactive-wrapper").style.paddingTop = "2px";
-    // document.querySelector("#controls").style.maxWidth = "none";
+    window.parent.postMessage({
+        sentinel: 'amp',
+        type: 'embed-size',
+        height: document.body.scrollHeight
+    }, '*');
 
     onElementHeightChange(document.body, function() {
         window.frameElement.height = document.body.offsetHeight + 150
